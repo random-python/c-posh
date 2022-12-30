@@ -1,0 +1,13 @@
+POSH
+====
+
+Python Object Sharing, or POSH for short, is an extension module to
+Python that allows objects to be placed in shared memory.  Objects in
+shared memory can be accessed transparently, and most types of
+objects, including instances of user-defined classes, can be shared.
+POSH allows concurrent processes to communicate simply by assigning
+objects to shared container objects.  On multiprocessor architectures,
+multi-process applications using POSH can significantly outperform
+similar multi-threaded applications, since Python threads don't scale
+to take advantage of multiple processors.  Even so, POSH lends itself
+to a programming model very similar to threads.

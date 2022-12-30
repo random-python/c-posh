@@ -1,0 +1,58 @@
+TODO:
+
+* Race condition with fork(): Child must have updated all proxy
+  bitmaps before parent can continue.
+
+* Implement comparisons and iterators for shared dictionaries
+
+* Implement remaining operations on shared lists
+
+* Shared list * 0 should become empty
+
+* Cyclic garbage collection
+
+* Comparisons between two proxy objects don't seem to behave as intended;
+  we need to implement __cmp__ or rich comparisons on proxy objects, but
+  which one?
+
+* Optimize SharedDictBase implementation to do away with the 'state'
+  field of hash table entries
+
+* Implement special __dict__ descriptor for shared types
+
+* Deal with __weakref__ on shared objects (probably should be disallowed)
+
+* Allow nonempty __slots__ on shared objects by substituting the descriptors
+  with special descriptors that read from the dictionary.
+
+* Review header files with regard to the extern keyword and DL_* macros
+
+* Delegate shared memory region allocation to a Python object??
+
+* Fix problem with _core.shared_getattribute and friends. The problem
+  is that built-in functions don't have binding behaviour - they lack a
+  __get__ method, so we have to wrap them in normal functions written in
+  Python code.
+
+* Consider setting exceptions in low-level routines like Lock_Acquire()
+  when they fail
+
+* Do lookup for __synch__, __instanceheap__ and friends on the type and
+  not on the meta-type; the value in the meta-type will serve as a default
+  value
+
+* Rename __synch__ to __posh_synch__ etc. ?
+
+* Allow sharing of singletons None and (in the future) True and False
+
+* Proxy objects should contain descriptors for data attributes present in
+  the referent type; i.e. SharedComplexProxy should have 'imag' and 'real'
+  descriptors so that they show up in dir()
+
+
+PROBLEMS:
+
+* How to avoid/detect deadlock? -- Add DeadlockException to special
+  synchronization policy object?
+
+* (Big one) How to support spawn()?

@@ -1,0 +1,16 @@
+Requirements
+============
+
+     - Python 2.2 or newer
+     - POSIX compliant operating system (does not work on Win32)
+     - x86 processors
+
+POSH has been successfully tested on FreeBSD and Linux.
+
+
+Installing
+==========
+
+POSH is compiled and installed using distutils.
+
+For details, run the command "python setup.py".

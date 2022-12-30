@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: posh
+Version: 1.1
+Summary: POSH -- Python Object Sharing
+Home-page: http://poshmodule.sourceforge.net/
+Author: Steffen Viken Valvaag
+Author-email: steffenv@stud.cs.uit.no
+License: GNU General Public License (GPL)
+Description: POSH -- Python Object Sharing
+Platform: UNKNOWN
